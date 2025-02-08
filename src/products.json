@@ -1,0 +1,24 @@
+[
+  {
+    "id": "f1990971-fcb3-4149-bdb9-0061103a0778",
+    "title": "Manta",
+    "description": "para taparse",
+    "code": "1a2b3c",
+    "price": 5000,
+    "stock": 10,
+    "category": "Dormitorio",
+    "status": true,
+    "thumbnails": []
+  },
+  {
+    "id": "5cbd9432-bb62-46bf-8877-67abd53502f6",
+    "title": "Heladera",
+    "description": "para Enfriar",
+    "code": "1b2c3d",
+    "price": 15000,
+    "stock": 20,
+    "category": "Electrodomestico",
+    "status": true,
+    "thumbnails": []
+  }
+]
