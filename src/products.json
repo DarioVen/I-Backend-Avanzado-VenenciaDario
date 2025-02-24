@@ -1,16 +1,5 @@
 [
   {
-    "id": "f1990971-fcb3-4149-bdb9-0061103a0778",
-    "title": "Manta",
-    "description": "para taparse",
-    "code": "1a2b3c",
-    "price": 5000,
-    "stock": 10,
-    "category": "Dormitorio",
-    "status": true,
-    "thumbnails": []
-  },
-  {
     "id": "5cbd9432-bb62-46bf-8877-67abd53502f6",
     "title": "Heladera",
     "description": "para Enfriar",
@@ -20,5 +9,43 @@
     "category": "Electrodomestico",
     "status": true,
     "thumbnails": []
+  },
+  {
+    "id": "c9577224-2748-4b33-b429-609c961fe5df",
+    "status": true,
+    "thumbnails": [],
+    "title": "Perro",
+    "description": "para jugar y querer",
+    "code": "1f2gh3",
+    "price": 1200,
+    "stock": 4,
+    "category": "Animal"
+  },
+  {
+    "id": "ee02a59c-8cce-4a58-b747-65700c1512e7",
+    "status": true,
+    "thumbnails": [
+      "imagenBanana.png"
+    ],
+    "title": "Banana",
+    "description": "Rica en potasio",
+    "code": "kl4452",
+    "price": 50000,
+    "stock": 1,
+    "category": "Fruta"
+  },
+  {
+    "id": "ade94c01-56ef-470d-97d1-f02c30fb4f67",
+    "status": true,
+    "thumbnails": [
+      "gatoHermoso.png"
+    ],
+    "title": "Gato",
+    "description": "Mejor que un perro",
+    "code": "miau122",
+    "price": 5151,
+    "stock": 3,
+    "category": "Animal",
+    "fromSocket": true
   }
 ]

@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { v4 as uuidv4 } from 'uuid';
+import path from 'node:path';
 import { Pmanager as productManager } from './products-manager.js';
 
 class CartsManager {
@@ -66,4 +67,4 @@ class CartsManager {
     }
 }
 
-export const Cmanager = new CartsManager("carts.json");
+export const Cmanager = new CartsManager(path.join(process.cwd(), 'src', 'carts.json'));

@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { v4 as uuidv4 } from 'uuid';
+import path from 'node:path';
 
 class ProductsManager {
     constructor(path) {
@@ -9,12 +10,14 @@ class ProductsManager {
     async getAllProducts() {
         try {
             if (fs.existsSync(this.path)) {
-                const products = await fs.promises.readFile(this.path, "utf-8");
-                return JSON.parse(products);
+                const data = await fs.promises.readFile(this.path, 'utf-8');
+                const products = JSON.parse(data);
+                return products;
             } else {
                 return [];
             }
         } catch (error) {
+            console.error('Error en getAllProducts:', error);
             throw new Error(error);
         }
     }
@@ -30,12 +33,11 @@ class ProductsManager {
 
     async createProduct(obj) {
         try {
-            const { status = true, thumbnails = [], ...rest } = obj; 
             const product = {
                 id: uuidv4(),
-                ...rest,
-                status,
-                thumbnails,
+                status: true,
+                thumbnails: [],
+                ...obj,
             };
             const products = await this.getAllProducts();
             products.push(product);
@@ -84,4 +86,4 @@ class ProductsManager {
     }
 }
 
-export const Pmanager = new ProductsManager("products.json");
+export const Pmanager = new ProductsManager(path.join(process.cwd(), 'src', 'products.json'));

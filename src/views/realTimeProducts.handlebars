@@ -1,0 +1,35 @@
+  <h1>Socket Client</h1>
+  <h2>Create a product</h2>
+  <form id="productForm" action="/products" method="POST" enctype="application/x-www-form-urlencoded">
+    <label>Title</label><br>
+    <input type="text" name="title" id="title" required><br>
+    <label>Description</label><br>
+    <input type="text" name="description" id="description" required><br>
+    <label>Code</label><br>
+    <input type="text" name="code" id="code" required><br>
+    <label>Price</label><br>
+    <input type="number" name="price" id="price" required><br>
+    <label>Stock</label><br>
+    <input type="number" name="stock" id="stock" required><br>
+    <label>Category</label><br>
+    <input type="text" name="category" id="category" required><br>
+    <label>Thumbnails</label><br>
+    <input type="text" name="thumbnails" id="thumbnails" ><br>
+    <label>Status</label><br>
+    <input type="checkbox" id="status" name="status" value="true" checked><br>
+    <button type="submit">Send</button><br>
+  </form>
+
+  <h2>Delete a product</h2>
+  <form id="deleteProductForm" action="/products" method="DELETE" enctype="application/x-www-form-urlencoded">
+    <label>Product ID</label><br>
+    <input type="text" name="deleteProductById" id="deleteProductById" required><br>
+    <button type="submit">Delete</button><br>
+  </form>
+
+  <h2>List of Products</h2>
+  <div id="messages"></div>
+  <div id="products"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/index.js"></script>
