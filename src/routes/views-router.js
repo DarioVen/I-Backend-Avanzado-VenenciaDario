@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Pmanager } from '../managers/products-manager.js';
+import { Pmanager } from '../controllers/managers/products-manager.js';
 
 const router = Router();
 

@@ -1,38 +1,16 @@
-import express from 'express';
-import { Cmanager } from '../managers/carts-manager.js';
+import { Router } from 'express';
+import { cartController } from '../controllers/carts-controller.js';
 
-const router = express.Router();
+const router = Router();
 
-router.post('/', async (req, res, next) => {
-    try {
-        const cart = await Cmanager.createCart();
-        res.status(201).json(cart);
-    } catch (error) {
-        next(error);
-    }
-});
-
-router.get('/:id', async (req, res, next) => {
-    try {
-        const cart = await Cmanager.getCart(req.params.id);
-        if (!cart) {
-            return res.status(404).json({ message: "Cart not found" });
-        }
-        res.json(cart);
-    } catch (error) {
-        next(error);
-    }
-});
-
-router.post('/:id/products/:pid', async (req, res, next) => {
-    try {
-        const { id, pid } = req.params; 
-        const cart = await Cmanager.addProductToCart(id, { id: pid }); 
-        res.json(cart);
-    } catch (error) {
-        next(error);
-    }
-});
-
+router.get('/', cartController.getAll);
+router.get('/:id', cartController.getById);
+router.post('/', cartController.create);
+router.put('/:id', cartController.update);
+router.delete('/:id', cartController.delete);
+router.post('/:cartId/products/:productId', cartController.addProduct);
+router.delete('/:cartId/products/:productId', cartController.removeProduct);
+router.put('/:cid/products/:pid', cartController.updateProductQuantity);
+router.delete('/clear/:cid', cartController.clearCart);
 
 export { router as cartsRouter };
